@@ -1,0 +1,286 @@
+body{
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    margin-top: 150px; /* Ajusta este valor según la altura de tu nav */
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Degradado de púrpura a azul */
+}
+nav{
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Para soporte en Safari */
+    height: 70px; /* Altura fija */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    position: fixed; /* Posición fija */
+    top: 20px; /* Separado de la parte superior */
+    left: 50px; /* Margen izquierdo */
+    right: 50px; /* Margen derecho */
+    z-index: 1000; /* Asegura que el nav esté sobre otros elementos */
+    border-radius: 35px; /* Bordes redondeados en forma de píldora */
+    padding: 0 20px; /* Espacio interno a los lados */
+}
+.Logo-header{
+    margin-top: 10px;
+    width: 250px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción del logo */
+}
+a{
+    background-color: #3498db; /* Azul principal */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 30px; /* Bordes más redondeados */
+    transition: background-color 0.3s, transform 0.3s; /* Suaviza las transiciones */
+}
+a:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra para mayor profundidad */
+}
+.Buttons-menu{
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos se alineen en una fila */
+    align-items: center;
+    gap: 20px; /* Espacio entre los enlaces */
+    margin-left: auto; /* Empuja el menú hacia la derecha */
+}
+.Buttons-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+    padding: 10px 20px;
+    color: white;
+    background-color: #3498db;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.Buttons-menu a:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+body[data-page="inicio"] .Buttons-menu a[href="Index.html"],
+body[data-page="catalogo"] .Buttons-menu a[href="Catalogo.html"],
+body[data-page="reservar"] .Buttons-menu a[href="Reservar.html"],
+body[data-page="nosotros"] .Buttons-menu a[href="Nosotros.html"] {
+    background-color: #0056b3; /* Azul más oscuro para el enlace activo */
+}
+
+.flex-contenedor{
+    display: flex;
+    position: relative; /* Cambiado de absolute a relative */
+    width: 100vw;
+    left: 0;
+    top: 100px;
+    height: auto; /* Asegúrate de que el contenedor se ajuste al contenido */
+}
+.item-flex5{
+    flex-basis: 20%;
+    margin: 0;
+}
+.Principal{
+    width: 100%;
+}
+.catalogo .categoria {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 20px; /* Espacio entre categorías */
+}
+
+.catalogo .peliculas-container {
+    display: flex; /* Usa flexbox para alinear los elementos */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay espacio */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.catalogo .pelicula {
+    background-color: white; /* Fondo blanco para la tarjeta */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para dar efecto 3D */
+    margin: 10px; /* Margen alrededor de la tarjeta */
+    padding: 10px; /* Espacio dentro de la tarjeta */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: transform 0.3s; /* Transición suave para hover */
+    display: flex; /* Para alinear la imagen y el texto */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    width: 200px; /* Ancho fijo para las tarjetas */
+    color: black; /* Color del texto */
+}
+
+.catalogo .pelicula img {
+    height: 250px; /* Altura de la imagen */
+    width: auto; /* Mantener la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.catalogo .pelicula p {
+    font-weight: bold; /* Texto en negrita */
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.catalogo .pelicula:hover {
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+}
+
+button {
+    background-color: #3498db; /* Azul principal */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+input, select {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .Buttons-menu {
+        margin-left: 10%;
+    }
+    .item-flex5 {
+        flex-basis: 50%;
+    }
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Para soporte en Safari */
+    color: white; /* Texto en blanco */
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.formulario-container {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Para soporte en Safari */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 50px;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+button {
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db; /* Azul principal */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+#peliculas-reservadas {
+    max-height: 175px; /* Ajusta según necesidad */
+    overflow-y: auto;
+}
+
+#peliculas-reservadas div {
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#peliculas-reservadas p {
+    margin: 0;
+}
+
+.btn-eliminar {
+    background-color: red; /* Color de fondo rojo */
+    color: white; /* Color de texto blanco */
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-eliminar:hover {
+    background-color: red; /* Mantiene el color rojo en hover */
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+#peliculas-reservadas input[type="number"] {
+    width: 50px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}

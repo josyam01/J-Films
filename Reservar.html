@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J Films | Reservar</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body data-page="reservar">
+    <nav>
+        <img class="Logo-header" src="Imagenes/J-films-logo-negro.png">
+        <div class="Buttons-menu">
+            <a href="Index.html"><i class="fas fa-home"></i> Inicio</a>
+            <a href="Catalogo.html"><i class="fas fa-list"></i> Catálogo</a>
+            <a href="Reservar.html"><i class="fas fa-ticket-alt"></i> Reservar</a>
+            <a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a>
+        </div>
+    </nav>
+    <section id="Reservar" class="formulario-container">
+        <h1>Reservar Película</h1>
+        <form action="submit_reserva.php" method="post" class="formulario">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="pelicula">Película:</label>
+                <select id="pelicula" name="pelicula" required>
+                    <option value="Arthur">Arthur</option>
+                    <option value="Civil-war">Civil War</option>
+                    <option value="GyK">GyK</option>
+                    <option value="The-first-omen">The First Omen</option>
+                    <option value="10-lives">10 Lives</option>
+                </select>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" max="10" required>
+                <button type="button" onclick="agregarPelicula()">Añadir Película</button>
+            </div>
+            <div id="peliculas-reservadas">
+                <!-- Aquí se añadirán las películas reservadas -->
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad del solicitante:</label>
+                <input type="number" id="edad" name="edad" min="18" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección del solicitante:</label>
+                <input type="text" id="direccion" name="direccion" required>
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo del solicitante:</label>
+                <div class="radio-group">
+                    <label for="masculino">
+                        <input type="radio" id="masculino" name="sexo" value="Masculino" required> Masculino
+                    </label>
+                    <label for="femenino">
+                        <input type="radio" id="femenino" name="sexo" value="Femenino" required> Femenino
+                    </label>
+                </div>
+            </div>
+            <button type="submit">Enviar solicitud</button>
+        </form>
+    </section>
+    <footer>
+        © 2023 J Films. Todos los derechos reservados.
+    </footer>
+
+    <!-- JavaScript para añadir y eliminar películas -->
+    <script>
+        function agregarPelicula() {
+            var cantidad = document.getElementById('cantidad').value;
+            if (!cantidad || cantidad > 10) {
+                alert("Por favor, ingresa una cantidad válida (1-10).");
+                return;
+            }
+            var select = document.getElementById('pelicula');
+            var pelicula = select.options[select.selectedIndex].text;
+            var contenedor = document.getElementById('peliculas-reservadas');
+            var div = document.createElement('div');
+            div.innerHTML = `
+                <p>${pelicula} - Cantidad: <input type="number" value="${cantidad}" min="1" max="10" onchange="actualizarCantidad(this, '${pelicula}')"></p>
+                <button onclick="this.parentNode.remove()" class="btn-eliminar"><i class="fas fa-trash"></i></button>
+            `;
+            contenedor.appendChild(div);
+        }
+
+        function actualizarCantidad(input, pelicula) {
+            var nuevaCantidad = input.value;
+            if (nuevaCantidad < 1 || nuevaCantidad > 10) {
+                alert("Por favor, ingresa una cantidad válida (1-10).");
+                input.value = 1; // Restablecer a 1 si la cantidad no es válida
+                return;
+            }
+            console.log(`Cantidad actualizada para ${pelicula}: ${nuevaCantidad}`);
+            // Aquí puedes agregar código para manejar la actualización de la cantidad en el backend o en el estado de la aplicación.
+        }
+    </script>
+</body>
+</html>

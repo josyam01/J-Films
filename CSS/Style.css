@@ -72,18 +72,39 @@ body[data-page="nosotros"] .Buttons-menu a[href="Nosotros.html"] {
 
 .flex-contenedor{
     display: flex;
-    position: relative; /* Cambiado de absolute a relative */
-    width: 100vw;
-    left: 0;
-    top: 100px;
-    height: auto; /* Asegúrate de que el contenedor se ajuste al contenido */
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ajusta el espacio entre los elementos */
+    padding: 20px;
 }
+
 .item-flex5{
-    flex-basis: 20%;
-    margin: 0;
+    flex: 1 1 10%; /* Ajusta para que cinco elementos quepan en una fila */
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.Principal{
+
+.pelicula img {
     width: 100%;
+    height: 300px; /* Fija la altura de las imágenes */
+    object-fit: cover; /* Asegura que las imágenes se ajusten al contenedor */
+    border-radius: 10px;
+}
+
+.pelicula p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.Principal{
+    width: 100% !important; /* Asegura que la imagen ocupe el 100% del contenedor padre */
+    height: auto !important; /* Mantiene la proporción de la imagen */
 }
 .catalogo .categoria {
     display: flex;
@@ -95,37 +116,37 @@ body[data-page="nosotros"] .Buttons-menu a[href="Nosotros.html"] {
 .catalogo .peliculas-container {
     display: flex; /* Usa flexbox para alinear los elementos */
     flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay espacio */
-    justify-content: center; /* Centra los elementos horizontalmente */
+    justify-content: space-around; /* Distribuye el espacio uniformemente alrededor de los elementos */
 }
 
 .catalogo .pelicula {
+    flex: 1 1 10%; /* Ajusta para que cinco elementos quepan en una fila, considerando márgenes */
+    margin: 10px; /* Espacio entre los elementos */
+    padding: 10px; /* Espacio interno */
     background-color: white; /* Fondo blanco para la tarjeta */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para dar efecto 3D */
-    margin: 10px; /* Margen alrededor de la tarjeta */
-    padding: 10px; /* Espacio dentro de la tarjeta */
     border-radius: 8px; /* Bordes redondeados */
-    transition: transform 0.3s; /* Transición suave para hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para dar efecto 3D */
     display: flex; /* Para alinear la imagen y el texto */
     flex-direction: column; /* Organiza los elementos en columna */
     align-items: center; /* Centra los elementos horizontalmente */
     text-align: center; /* Alinea el texto al centro */
-    width: 200px; /* Ancho fijo para las tarjetas */
-    color: black; /* Color del texto */
+    transition: transform 0.3s; /* Transición suave para hover */
 }
 
-.catalogo .pelicula img {
-    height: 250px; /* Altura de la imagen */
-    width: auto; /* Mantener la proporción de la imagen */
-    border-radius: 8px; /* Bordes redondeados para la imagen */
+.pelicula img {
+    max-width: 100%; /* Limita el ancho máximo al 100% del contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
 }
 
-.catalogo .pelicula p {
-    font-weight: bold; /* Texto en negrita */
+.pelicula p {
     margin-top: 10px; /* Espacio entre la imagen y el texto */
+    font-size: 1em; /* Ajusta el tamaño de la fuente */
 }
 
-.catalogo .pelicula:hover {
+.pelicula:hover {
     transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Sombra más pronunciada en hover */
 }
 
 button {
@@ -162,9 +183,10 @@ footer {
     backdrop-filter: blur(10px); /* Efecto de desenfoque */
     -webkit-backdrop-filter: blur(10px); /* Para soporte en Safari */
     color: white; /* Texto en blanco */
-    padding: 20px 0;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
+    text-align: center; /* Alineación del texto al centro */
+    padding: 20px 0; /* Espaciado interno */
+    font-family: 'Arial', sans-serif; /* Fuente Arial */
+    font-size: 14px; /* Tamaño de la fuente */
 }
 
 .formulario-container {
@@ -283,4 +305,34 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px;
+}
+
+.div-glass {
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    margin: 10px; /* Margen externo */
+}
+
+.pelicula {
+    background-color: white; /* Fondo blanco para la tarjeta */
+    margin: 10px; /* Margen entre tarjetas */
+    padding: 10px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: none; /* Elimina la sombra */
+    display: flex; /* Para alinear la imagen y el texto */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.pelicula img {
+    max-width: 100%; /* Limita el ancho máximo al 100% del contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.pelicula p {
+    margin-top: 10px; /* Espacio entre la imagen y el texto */
 }

@@ -26,14 +26,7 @@ nav{
     height: auto; /* Mantiene la proporción del logo */
     margin-top: 10px;
 }
-.Buttons-menu a{
-    background-color: #3498db; /* Azul principal */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 30px; /* Bordes más redondeados */
-    transition: background-color 0.3s, transform 0.3s; /* Suaviza las transiciones */
-}
+
 a:hover {
     background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
     transform: scale(1.1); /* Aumenta ligeramente el tamaño */
@@ -367,24 +360,13 @@ button:hover {
     gap: 1rem;
 }
 
-/* Muestra el menú de hamburguesa solo en pantallas pequeñas */
-@media (max-width: 768px) {
-    #menuToggle {
-        display: block;
-    }
-
-    .Buttons-menu {
-        display: none; /* Oculta el menú de botones en pantallas pequeñas */
-    }
-}
-
 * {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
 }
 #menuToggle {
-  display: none;
+  display: block;
   position: relative;
   top: 5px;
   left: -20px;
@@ -392,6 +374,7 @@ button:hover {
   user-select: none;
   top: 3px;
   left: -10px;
+  
 }
 #menuToggle a {
   text-decoration: none;
@@ -472,5 +455,39 @@ button:hover {
     transform: none;
   }
 
+/* Mostrar el menú de hamburguesa por defecto */
+#menuToggle {
+    display: block;
+}
 
+/* Ocultar el menú de hamburguesa en pantallas más grandes */
+@media (min-width: 940px) {
+    #menuToggle {
+        display: none;
+    }
+}
+
+/* Mostrar el menú de navegación completo en pantallas más grandes */
+@media (min-width: 940px) {
+    .Buttons-menu {
+        display: flex;
+    }
+}
+
+/* Ocultar el menú de navegación completo en pantallas pequeñas */
+@media (max-width: 939px) {
+    .Buttons-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row; /* Organiza los elementos en columna en pantallas pequeñas */
+    }
+    .Logo-header {
+        margin-left: -30px; /* Espacio entre el logo y el men */
+        margin-right: 0; /* Espacio entre el logo y el men */
+    }
+}
 

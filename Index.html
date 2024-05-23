@@ -10,13 +10,24 @@
 <body data-page="inicio">
     <nav>
         <img class="Logo-header" src="Imagenes/J-films-logo-negro.png" alt="Logo">
-        <button class="nav-toggle">☰</button>
         <div class="Buttons-menu">
             <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
             <a href="Catalogo.html"><i class="fas fa-list"></i> Catálogo</a>
             <a href="Reservar.html"><i class="fas fa-ticket-alt"></i> Reservar</a>
             <a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a>
         </div>
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a href="index.html"><li>Inicio</li></a>
+              <a href="Catalogo.html"><li>Catálogo</li></a>
+              <a href="Reservar.html"><li>Reservar</li></a>
+              <a href="Nosotros.html"><li>Nosotros</li></a>
+            </ul>
+          </div>
     </nav>
     <section id="Peliculas" class="catalogo">
         <div class="categoria">
@@ -52,15 +63,5 @@
     <footer>
         © 2023 J Films. Todos los derechos reservados.
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('.nav-toggle');
-            const menu = document.querySelector('.Buttons-menu');
-
-            menuButton.addEventListener('click', function() {
-                menu.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>

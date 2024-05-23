@@ -20,10 +20,11 @@ nav{
     border-radius: 35px; /* Bordes redondeados en forma de píldora */
     padding: 0 20px; /* Espacio interno a los lados */
 }
+
 .Logo-header{
-    margin-top: 10px;
     width: 250px; /* Ajusta el tamaño del logo */
     height: auto; /* Mantiene la proporción del logo */
+    margin-top: 10px;
 }
 a{
     background-color: #3498db; /* Azul principal */
@@ -42,8 +43,8 @@ a:hover {
     display: flex;
     flex-direction: row; /* Asegura que los elementos se alineen en una fila */
     align-items: center;
+    justify-content: space-around; /* Distribuye el espacio uniformemente */
     gap: 20px; /* Espacio entre los enlaces */
-    margin-left: auto; /* Empuja el menú hacia la derecha */
 }
 .Buttons-menu a {
     display: flex;
@@ -167,15 +168,6 @@ input, select {
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-@media (max-width: 768px) {
-    .Buttons-menu {
-        margin-left: 10%;
-    }
-    .item-flex5 {
-        flex-basis: 50%;
-    }
 }
 
 footer {
@@ -335,4 +327,61 @@ button:hover {
 
 .pelicula p {
     margin-top: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.pelicula-reservada {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.caratula-miniatura {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.btn-eliminar {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos generales para el menú de navegación */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.Buttons-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .Buttons-menu {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Ocultar el menú hasta que se haga clic en el icono del menú hamburguesa */
+    }
+
+    .Buttons-menu.active {
+        display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
 }

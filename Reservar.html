@@ -32,18 +32,19 @@
     </nav>
     <section id="Reservar" class="formulario-container">
         <h1>Reservar Película</h1>
+        <br>
         <form action="submit_reserva.php" method="post" class="formulario">
             <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                
+                <input type="text" class="input" placeholder="Nombre" id="nombre" name="nombre" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                
+                <input type="email" class="input" placeholder="Email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="pelicula">Película:</label>
-                <select id="pelicula" name="pelicula" required>
+                <label for="pelicula">Película</label>
+                <select class="pelis" id="pelicula" name="pelicula" required>
                     <option value="The-first-omen">The First Omen - 2024</option>
                     <option value="the-conjuring">The Conjuring - 2013</option>
                     <option value="the-shining">The Shining - 1980</option>
@@ -70,27 +71,27 @@
                     <option value="The-pursuit-of-happyness">The Pursuit of Happyness - 2006</option>
                     <option value="Forrest-gump">Forrest Gump - 1994</option>
                 </select>
-                <label for="cantidad">Cantidad:</label>
-                <input type="number" id="cantidad" name="cantidad" min="1" max="10" required>
-                <button type="button" onclick="agregarPelicula()">Añadir Película</button>
+                
+                <input type="number" class="input" placeholder="Cantidad" id="cantidad" name="cantidad" min="1" max="10" required>
+                <button class="btn-reservar" type="button" onclick="agregarPelicula()">Añadir Película</button>
             </div>
             <div id="peliculas-reservadas">
                 <!-- Aquí se añadirán las películas reservadas -->
             </div>
-            <div class="form-group">
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" required>
+            <div class="form-group espaciado">
+                <label for="fecha">Fecha</label>
+                <input type="date" class="input" placeholder="Fecha" id="fecha" name="fecha" required>
             </div>
             <div class="form-group">
-                <label for="edad">Edad del solicitante:</label>
-                <input type="number" id="edad" name="edad" min="18" required>
+                
+                <input type="number" class="input" placeholder="Edad" id="edad" name="edad" min="18" required>
             </div>
             <div class="form-group">
-                <label for="direccion">Dirección del solicitante:</label>
-                <input type="text" id="direccion" name="direccion" required>
+                
+                <input type="text" class="input" placeholder="Dirección" id="direccion" name="direccion" required>
             </div>
             <div class="form-group">
-                <label for="sexo">Sexo del solicitante:</label>
+                <label for="sexo">Sexo del solicitante</label>
                 <div class="radio-group">
                     <label for="masculino">
                         <input type="radio" id="masculino" name="sexo" value="Masculino" required> Masculino
@@ -100,11 +101,11 @@
                     </label>
                 </div>
             </div>
-            <button type="submit">Enviar solicitud</button>
+            <button class="btn-reservar" type="submit">Enviar solicitud</button>
         </form>
     </section>
     <footer>
-        © 2023 J Films. Todos los derechos reservados.
+        © 2024 J Films. Todos los derechos reservados.
     </footer>
 
     <!-- JavaScript para añadir y eliminar películas -->
